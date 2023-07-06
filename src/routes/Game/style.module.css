@@ -1,3 +1,6 @@
-.pad_70{
-  padding-top: 70px;
+.flex { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
 }

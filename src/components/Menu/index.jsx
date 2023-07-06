@@ -1,27 +1,29 @@
 import cn from 'classnames'
 
+import { Link } from 'react-router-dom'
+
 import s from './style.module.css'
 
 const MENU = [
   {
     title: 'HOME',
-    to: '#welcome',
+    to: '/',
   },
   {
     title: 'GAME',
-    to: '#game',
+    to: '/game',
   },
   {
     title: 'ABOUT',
-    to: '#about',
+    to: '/about',
   },
   {
     title: 'CONTACT',
-    to: '#contact',
+    to: '/contact',
   },
 ]
 
-const Menu = ({ isOpen }) => {
+const Menu = ({ isOpen, onClickMenu }) => {
   return (
     <div
       className={cn(s.menuContainer, {
@@ -34,7 +36,7 @@ const Menu = ({ isOpen }) => {
         <ul>
           {MENU.map(({ title, to }, index) => (
             <li key={index}>
-              <a href={to}>{title}</a>
+              <Link onClick={onClickMenu} to={to}>{title}</Link>
             </li>
           ))}
         </ul>
